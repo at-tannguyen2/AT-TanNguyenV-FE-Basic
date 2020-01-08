@@ -1,7 +1,7 @@
 **AT-FE-Intership-Winter-2019-TanNguyenV**
 
-Name: Nguyễn Văn Tấn
+Name: Van Tan Nguyen
 
 Age: 23
 
-SĐT: 0931807480
+Phone: 0931807480
