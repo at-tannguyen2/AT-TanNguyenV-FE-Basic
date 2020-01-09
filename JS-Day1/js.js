@@ -21,22 +21,22 @@ function bai3(str) {
 
   for (var i = 0; i < str.length; i++) {
     console.log(str.charAt(i));
-    if (str.charAt(i) !== "*") {
+    if (str.charAt(i) !== '*') {
       temp += parseInt(str.charAt(i));
     }
   }
 
   if (temp % 3 === 0) {
-    result = arr1.map(function (i) {
-      return str.replace("*", i)
+    result = arr1.map(function(i) {
+      return str.replace('*', i)
     });
   } else if (temp % 3 === 1) {
-    result = arr2.map(function (i) {
-      return str.replace("*", i)
+    result = arr2.map(function(i) {
+      return str.replace('*', i)
     });
   } else {
-    result = arr3.map(function (i) {
-      return str.replace("*", i)
+    result = arr3.map(function(i) {
+      return str.replace('*', i)
     });
   }
   return result;
@@ -46,7 +46,7 @@ function bai4(str) {
   var temp = bai3(str);
   var result = [];
 
-  result = temp.filter(function (item) {
+  result = temp.filter(function(item) {
     return parseInt(item.charAt(item.length - 1)) % 2 === 0;
   });
 
