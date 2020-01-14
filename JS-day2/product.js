@@ -84,8 +84,3 @@ function render(products) {
     result.appendChild(item);
   }
 }
-
-
-
-
-
