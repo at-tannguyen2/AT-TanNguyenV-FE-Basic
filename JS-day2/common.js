@@ -37,14 +37,14 @@ var products = [
     id: '6',
     src: 'https://imgd.aeplcdn.com/476x268/bw/models/yamaha-yzf-r15-v3-dual-channel-abs--bs-vi20191209114603.jpg',
     name: 'Yamaha R15 v3',
-    des: 'Xe Máy Yamaha R15 v3 GP 2019',
+    des: 'Xe Máy Yamaha R15 v3 GP 2019 Xanh',
     price: '75000000'
   },
   {
     id: '7',
     src: 'https://media.static-adayroi.com/sys_master/h7f/hfd/16374966779934.jpg',
     name: 'Yamaha Jupiter RC',
-    des: 'Xe Máy Yamaha Jupiter RC 2019',
+    des: 'Xe Máy Yamaha Jupiter RC 2019 Đỏ',
     price: '30000000'
   },
   {
@@ -57,14 +57,13 @@ var products = [
 ];
 localStorage.setItem('products', JSON.stringify(products));
 
-
 function countCart(){
   var countCart = document.getElementById('js-count-cart');
   var cart = JSON.parse(localStorage.getItem('cart'));
   var count = 0;
   for (var i = 0; i < cart.lenght; i++){
-    console.log(cart[i]['count']);
-    count += cart[i]['count'];
+    console.log(cart[i].count);
+    count += cart[i].count;
   }
   countCart.innerHTML = count;
 }

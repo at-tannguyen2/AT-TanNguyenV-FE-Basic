@@ -6,22 +6,31 @@ function clickCart() {
   var btnClick = document.getElementsByClassName('btn-primary');
   var count = 1;
   var cart = JSON.parse(localStorage.getItem('cart'));
+
   for (var i = 0; i < btnClick.length; i++) {
     var indexBtn = btnClick[i];
     indexBtn.addEventListener('click', function (event) {
       var row = event.target.dataset.id;
-      if (cart) {
-        for (var i = 0; i < cart.length; i++) {
-          if (row === cart[i]['id']) {
-            cart[i]['count']++;
-            break;
+      if (cart) { //if exists Cart from localstorage
+        if (cart.length > 0) {
+          for (var i = 0; i < cart.length; i++) {
+            if (cart.length > 0) {
+              if (row === cart[i]['id']) {
+                cart[i]['count']++;
+                break;
+              }
+              else if (i === (cart.length - 1)) {
+                cart.push({ id: row, count: count });
+                break;
+              }
+            } else {
+              cart.push({ id: row, count: count });
+            }
           }
-          else if (i === (cart.length - 1)) {
-            cart.push({ id: row, count: count });
-            break;
-          }
+        } else {
+          cart.push({ id: row, count: count });
         }
-      } else {
+      } else { //if not exist cart form localstorage
         cart = [];
         cart.push({ id: row, count: count });
       }
@@ -34,6 +43,7 @@ function clickCart() {
 
 function render(products) {
   var result = document.getElementsByClassName('js-result')[0];
+
   for (var i = 0; i < products.length; i++) {
     item = document.createElement('div');
     item.classList.add('content-item');
@@ -42,6 +52,7 @@ function render(products) {
     border_content.classList.add('border-content');
     item.appendChild(border_content);
 
+    //Create border for content item
     content_img_top = document.createElement('div');
     content_img_top.classList.add('content-img-top');
     border_content.appendChild(content_img_top);
@@ -74,9 +85,9 @@ function render(products) {
     content_item_body.appendChild(part);
 
     // Add to cart
-    part = document.createElement('input');
+    part = document.createElement('button');
     part.type = 'button';
-    part.value = 'Add to Cart';
+    part.textContent = 'Add to Cart';
     part.classList.add('btn-primary');
     part.dataset.id = products[i].id;
     content_item_body.appendChild(part);

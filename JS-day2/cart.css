@@ -213,19 +213,16 @@ a{
   text-align: center;
 }
 
-th:last-child {
-  background: #FF4040;
-  color: white;
-  font-weight: bold;
-}
-
 .table tr, .table th{
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-input[type="number"] {
-  border: none;
-  text-align: center;
-  width: 25px;
+img.cart-img {
+  width: 80px;
+  height: 65px;
+}
+
+.btn-danger{
+  font-weight: bold;
 }
