@@ -1,3 +1,4 @@
+//click cart --> save local
 function clickCart() {
   var btnClick = document.getElementsByClassName('btn-primary');
   var count = 1;
@@ -7,7 +8,7 @@ function clickCart() {
     var indexBtn = btnClick[i];
     indexBtn.addEventListener('click', function (event) {
       var row = event.target.dataset.id;
-      if (cart) { //if exists Cart from localstorage
+      if (cart) {
         if (cart.length > 0) {
           for (var i = 0; i < cart.length; i++) {
             if (cart.length > 0) {
@@ -26,17 +27,24 @@ function clickCart() {
         } else {
           cart.push({ id: row, count: count });
         }
-      } else { //if not exist cart form localstorage
+      } else {
         cart = [];
         cart.push({ id: row, count: count });
       }
       localStorage.setItem('cart', JSON.stringify(cart));
-      
+      countCart();
     });
   }
-  
+
 }
 
+function countCart() {
+  var countCart = document.getElementById('js-count-cart');
+  var cart = JSON.parse(localStorage.getItem('cart'));
+  countCart.innerHTML = cart.length;
+}
+
+//render products to HTML
 function render(products) {
   var result = document.getElementsByClassName('js-product')[0];
 

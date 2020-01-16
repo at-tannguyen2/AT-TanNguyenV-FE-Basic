@@ -1,3 +1,4 @@
+//list products
 var products = [
   {
     id: '1',
@@ -56,11 +57,3 @@ var products = [
   }
 ];
 localStorage.setItem('products', JSON.stringify(products));
-
-function countCart(){
-  var countCart = document.getElementById('js-count-cart');
-  var cart = JSON.parse(localStorage.getItem('cart'));
-  countCart.innerHTML = cart.length;
-}
-
-countCart();
