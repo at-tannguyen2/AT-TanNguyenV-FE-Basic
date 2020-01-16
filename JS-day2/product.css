@@ -273,3 +273,8 @@ p.content-item-price {
   font-weight: 500;
   color: black;
 }
+
+span#js-count-cart {
+  color: red;
+  font-weight: bold;
+}

@@ -7,9 +7,6 @@ for (var i = 0; i < arrCart.length; i++) {
   totalCart.push(findById(arrCart[i].id));
 }
 
-render(totalCart);
-deleteCart();
-
 // find id from id button
 function findById(id) {
   for (var i = 0; i < product.length; i++) {
@@ -21,7 +18,7 @@ function findById(id) {
 
 //render data to HTML
 function render(totalCart) {
-  var result = document.getElementById('js-result');
+  var result = document.getElementById('js-cart');
   var content = totalCart.map(function (item, index) {
     return '<tr><th>' + parseInt(index + 1) + '</th><td><img class="cart-img"  src = ' + item.src + '></td><td>' + arrCart[index].count + '</td><td>' + item.price + '</td><td>' + arrCart[index].count * item.price + '</td><td><button type="button" class="btn btn-danger" data-id =' + item.id + '>X</button>';
   });
@@ -42,7 +39,12 @@ function deleteCart() {
         }
       }
       localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
       render(JSON.parse(cart));
     })
   }
 }
+
+
+render(totalCart);
+deleteCart();
