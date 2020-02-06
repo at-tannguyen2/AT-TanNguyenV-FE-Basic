@@ -1,5 +1,5 @@
 var listNews = [
-  { id: '1', title: 'Bệnh nhân thứ 9 nhiễm virus corona tại Việt Nam', content: 'Bệnh nhân mới có kết quả dương tính với virus corona là ông T.C.P., 30 tuổi, địa chỉ xã Minh Quang, huyện Tam Đảo, tỉnh Vĩnh Phúc. Đây cũng là nhân viên Công ty TNHH Nihon Plast của Nhật Bản được cử sang Trung Quốc tập huấn tại Thành phố Vũ Hán, tỉnh Hồ Bắc, Trung Quốc.', isDelete: 'no' }
+  { id: '1', title: 'Bệnh nhân thứ 9 nhiễm virus corona tại Việt Nam', content: 'Bệnh nhân mới có kết quả dương tính với virus corona là ông T.C.P., 30 tuổi, địa chỉ xã Minh Quang, huyện Tam Đảo, tỉnh Vĩnh Phúc. Đây cũng là nhân viên Công ty TNHH Nihon Plast của Nhật Bản được cử sang Trung Quốc tập huấn tại Thành phố Vũ Hán, tỉnh Hồ Bắc, Trung Quốc.', isDelete: false }
 ];
 localStorage.setItem('listNews', JSON.stringify(listNews));
 
