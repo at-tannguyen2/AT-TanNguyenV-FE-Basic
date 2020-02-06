@@ -1,7 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
 }
 
 .container {
@@ -23,7 +21,7 @@
   flex-wrap: wrap;
 }
 
-.page-header {
+.header-top {
   width: 100%;
   height: 100px;
 }
@@ -53,13 +51,20 @@
   font-weight: bold;
 }
 
-.nav {
+.text-primary {
+  color: #11a8dd;
+}
+
+.text-secondary {
+  color: rgb(0, 0, 0);
+}
+
+.category-menu {
   list-style: none;
   justify-content: flex-end;
 }
 
 .nav-link {
-  color: black;
   text-transform: uppercase;
   text-decoration: none; 
   font-size: 20px;
@@ -69,11 +74,11 @@
   margin: 10px;
 }
 
-header {
-  border-bottom: solid 1px black;
+.page-header {
+  border-bottom: solid 1px rgb(0, 0, 0);
 }
 
-.page-main {
+.page-main-wrapper {
   width: 100%;
   min-height: 500px;
 }
@@ -111,8 +116,7 @@ header {
   width: 80px;
   height: 40px;
   font-size: 20px;
-  background-color: white;
-  color: #11a8dd;
+  background-color: #FFFFFF;
   border: 2px solid #11a8dd;
   border-radius: 5px;
   margin-left: 10px;
@@ -120,13 +124,9 @@ header {
   outline: none;
 }
 
-.fab {
-  color: #11a8dd;
-}
-
 .btn-add:hover {
   background-color: #11a8dd;
-  color: white;
+  color: #FFFFFF;
 }
 
 .comment-result {
@@ -138,9 +138,9 @@ header {
 .btn-delete {
   width: 70px;
   height: 40px;
-  color: red;
-  background-color: white;
-  border: 2px solid red;
+  color: #FF0000;
+  background-color: #FFFFFF;
+  border: 2px solid #FF0000;
   padding: 5px 5px;
   font-size: 20px;
   line-height: 1.5;
@@ -149,8 +149,8 @@ header {
 }
 
 button.btn-delete:hover {
-  background-color: red;
-  color: white;
+  background-color: #FF0000;
+  color: #FFFFFF;
 }
 
 .img-comment {
@@ -158,21 +158,19 @@ button.btn-delete:hover {
   height: 55px;
 }
 
-.comment-result-title {
+.comment-result-article {
   width: 10%;
 }
 
 .comment-result-content {
-  display: flex;
   width: 90%;
-  align-items: center;
 }
 
 .comment-text {
   width: 60%;
 }
 
-.content {
+.news {
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -182,20 +180,20 @@ button.btn-delete:hover {
 }
 
 .title {
-  color: #11a8dd;
   font-size: 35px;
 }
 
-.page-footer {
+.page-footer-wrapper {
   margin-top: 20px;
 }
 
-main {
-  border-bottom: solid 1px black;
+.page-main {
+  border-bottom: solid 1px rgb(0, 0, 0);
 }
 
 .img-input {
-  width: 6%;
+  width: 7%;
+  height: 55px;
   margin-top: 10px;
 }
 
@@ -205,11 +203,11 @@ main {
 
 .comment-title-text {
   font-size: 25px;
-  color: #11a8dd;
-  padding-left: 50px;
+  margin-left: 50px;
 }
 
 .comment-icon {
   width: 2%;
+  height: 30px;
   margin-left: 7px;
 }

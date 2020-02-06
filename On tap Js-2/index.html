@@ -11,28 +11,28 @@
 </head>
 
 <body>
-  <header>
+  <header class="page-header">
     <div class="container">
-      <div class="page-header d-flex flex-wrap align-item-center">
-        <section class="logo">
+      <div class="header-top d-flex flex-wrap align-item-center">
+        <div class="logo">
           <img class="image-logo img-fluid"
             src="https://png.pngtree.com/template/20190515/ourlarge/pngtree-cleaning-service-logo-design-concept-of-squeegee-purification-wet-cleaning-image_151446.jpg"
             alt="logo">
-        </section>
+        </div>
 
         <nav class="menu">
-          <ul class="nav d-flex flex-wrap">
+          <ul class="category-menu d-flex flex-wrap">
             <li class="nav-item">
-              <a class="nav-link" href="#">home</a>
+              <a class="nav-link text-secondary" href="#">home</a>
+            </li>
+            <li class="nav-item text-secondary">
+              <a class="nav-link text-secondary" href="#">abouts us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">abouts us</a>
+              <a class="nav-link text-secondary" href="#">contact us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">contact us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">news</a>
+              <a class="nav-link text-secondary" href="#">news</a>
             </li>
           </ul>
         </nav>
@@ -40,49 +40,42 @@
     </div>
   </header>
 
-  <main>
+  <main class="page-main">
     <div class="container">
-      <div class="page-main">
-        <section class="content">
-          <div class="news">
-          </div>
+      <div class="page-main-wrapper">
+        <div class="news">
+          <div class="js-news"></div>
 
           <div class="share-social text-center">
             <p class="share-icon bold">Share me</p>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-facebook text-primary"></i></a>
+            <a href="#"><i class="fab fa-twitter text-primary"></i></a>
+            <a href="#"><i class="fab fa-instagram text-primary"></i></a>
+            <a href="#"><i class="fab fa-pinterest text-primary"></i></a>
           </div>
-        </section>
+        </div>
 
-        <section class="comment">
-          <div class="comment-title d-flex">
-            <div class="comment-title-text">
-              <p class="bold">Comment</p>
-            </div>
-            <div class="comment-icon">
-              <img class="img-fluid" src="https://image.flaticon.com/icons/png/512/1380/1380338.png" alt="">
-            </div>
+        <div class="comment">
+          <div class="comment-title d-flex align-item-center">
+            <p class="comment-title-text text-primary bold">Comment</p>
+            <img class="comment-icon" src="https://image.flaticon.com/icons/png/512/1380/1380338.png" alt="">
           </div>
-          <div class="main-comment" id="js-comment">
-
-          </div>
+          <div class="main-comment" id="js-comment"></div>
           <div class="input-comment d-flex">
-            <div class="img-input">
-              <img class="img-comment" src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1412243/910/607/m1/fpnw/wm0/lawyer-avatar-flat-icon-01-.jpg?1467280299&s=7f76fc556d9c3ce29567ee4f325dd1f3" alt="">
-            </div>
-            <input class="input-value" id="js-value" type="text" placeholder="Add a comment...">
-            <button class="btn btn-add bold"><i class="fas fa-comments"></i></button>
+            <img class="img-input"
+              src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1412243/910/607/m1/fpnw/wm0/lawyer-avatar-flat-icon-01-.jpg?1467280299&s=7f76fc556d9c3ce29567ee4f325dd1f3"
+              alt="#">
+            <input class="input-value" id="js-comment-value" type="text" placeholder="Add a comment...">
+            <button class="btn btn-add text-primary bold"><i class="fas fa-comments"></i></button>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   </main>
 
-  <footer>
+  <footer class="page-footer">
     <div class="container">
-      <div class="page-footer text-center bold">
+      <div class="page-footer-wrapper text-center bold">
         <p>&copy; 2018 COPYRIGHT OF SPECIALIZED CLINIC</p>
       </div>
     </div>
