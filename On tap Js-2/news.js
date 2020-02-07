@@ -1,13 +1,16 @@
 var listNews;
+//get News data from localStorage
 function getLocalStorageNews() {
   listNews = localStorage.getItem('listNews');
   listNews = listNews ? JSON.parse(listNews) : [];
 }
 
+//save News data to localStorage
 function setLocalStorageNews() {
   localStorage.setItem('listNews', JSON.stringify(listNews));
 }
 
+//News data
 var listNews = [
   {
     id: '1',
@@ -18,8 +21,9 @@ var listNews = [
 ];
 setLocalStorageNews();
 
+//render news data to HTML
 function renderNews() {
-  var news = document.getElementsByClassName('js-news')[0];
+  var news = document.getElementsByClassName('js-result-news')[0];
   getLocalStorageNews();
   var content = listNews.map(function(item) {
     return '<div class="news-title"><h1 class="title text-primary text-upscase bold text-center">' + item.title + '</h1></div><div class="news-text"><p>' + item.content + '</p></div>';

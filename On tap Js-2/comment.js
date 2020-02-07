@@ -19,7 +19,6 @@ function pushCommentToArr() {
     if (commentValue === '') {
       alert('Please add a comment...!!!')
     } else {
-      var id = 0;
       var objCmt = {
         content: commentValue,
         id: listComment.length && listComment ? listComment.length : 0,
@@ -41,9 +40,9 @@ function pushCommentToArr() {
 
 //render comment to HTML
 function renderComment() {
-  var resultComment = document.getElementById('js-comment');
+  var resultComment = document.getElementById('js-result-comment');
   getLocalStorageComments();
-  var content = listComment.map(function(item, index) {
+  var content = listComment.map(function(item) {
     if (!item.isDelete) {
       return '<div class="comment-result"><div class="comment-result-article"><img class="img-comment" src="' + item.user.avatar + '"><p class="bold">' + item.user.name + '</p></div><div class="comment-result-content d-flex align-item-center"><p class="comment-text">' + item.content + '</p><button class="btn-delete bold" data-id="' + item.id + '"><i class="far fa-trash-alt"></i></button></div></div>';
     }
