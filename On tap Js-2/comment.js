@@ -44,15 +44,15 @@ function renderComment() {
   getLocalStorageComments();
   var content = listComment.map(function(item) {
     if (!item.isDelete) {
-      return '<div class="comment-result"><div class="comment-result-article"><img class="img-comment" src="' + item.user.avatar + '"><p class="bold">' + item.user.name + '</p></div><div class="comment-result-content d-flex align-item-center"><p class="comment-text">' + item.content + '</p><button class="btn-delete bold" data-id="' + item.id + '"><i class="far fa-trash-alt"></i></button></div></div>';
+      return '<div class="comment-result d-flex align-item-center"><div class="comment-result-article"><img class="img-comment" src="' + item.user.avatar + '"><p class="bold">' + item.user.name + '</p></div><div class="comment-result-content d-flex align-item-center"><p class="comment-text">' + item.content + '</p><button class="btn-delete bold" data-id="' + item.id + '"><i class="far fa-trash-alt"></i></button></div></div>';
     }
   });
   resultComment.innerHTML = content.join('');
-  deleteComment();
+  addDeleteEventForBtnComment();
 }
 
-//delete comment
-function deleteComment() {
+//add delete event for comment button
+function addDeleteEventForBtnComment() {
   var btnDelete = document.getElementsByClassName('btn-delete');
   for (var i = 0; i < btnDelete.length; i++) {
     btnDelete[i].addEventListener('click', function(event) {

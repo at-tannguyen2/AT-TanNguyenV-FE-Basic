@@ -23,12 +23,12 @@ setLocalStorageNews();
 
 //render news data to HTML
 function renderNews() {
-  var news = document.getElementsByClassName('js-result-news')[0];
+  var resultNews = document.getElementsByClassName('js-result-news')[0];
   getLocalStorageNews();
   var content = listNews.map(function(item) {
     return '<div class="news-title"><h1 class="title text-primary text-upscase bold text-center">' + item.title + '</h1></div><div class="news-text"><p>' + item.content + '</p></div>';
   });
-  news.innerHTML = content.join('');
+  resultNews.innerHTML = content.join('');
 }
 
 renderNews();
