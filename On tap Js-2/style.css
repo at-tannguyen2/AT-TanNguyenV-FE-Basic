@@ -73,17 +73,13 @@
   margin: 10px;
 }
 
-.page-header {
-  border-bottom: solid 1px rgb(0, 0, 0);
-}
-
 .page-main-wrapper {
   width: 100%;
   min-height: 500px;
 }
 
 .news-text {
-  margin: 20px 0 0 0;
+  margin-top: 20px;
 }
 
 .share-icon {
@@ -98,8 +94,8 @@
 .input-value {
   width: 70%;
   height: 70px;
-  padding: 0 0 0 10px;
-  margin: 0 0 30px 0;
+  padding-left: 10px;
+  margin-bottom: 30px;
   border: 1px solid #ced4da;
   border-radius: 10px;
   outline: none;
@@ -127,13 +123,13 @@
 }
 
 .comment-result {
-  margin: 15px 0 0 0;
+  margin-top: 15px;
 }
 
 .btn-delete {
   width: 70px;
   height: 40px;
-  padding: 5px 5px;
+  padding: 5px;
   font-size: 20px;
   line-height: 1.5;
   color: #FF0000;
@@ -170,7 +166,7 @@
 }
 
 .share-social {
-  margin: 20px 0 0 0;
+  margin-top: 20px;
 }
 
 .title {
@@ -178,30 +174,30 @@
 }
 
 .page-footer-wrapper {
-  margin: 20px 0 0 0;
+  margin-top: 20px;
 }
 
-.page-main {
+.page-main, .page-header {
   border-bottom: solid 1px rgb(0, 0, 0);
 }
 
 .img-input {
   width: 7%;
   height: 55px;
-  margin: 10px 0 0 0;
+  margin-top: 10px;
 }
 
 .main-comment {
-  padding: 0 0 0 65px;
+  padding-left: 65px;
 }
 
 .comment-title-text {
-  margin: 0 0 0 50px;
+  margin-left: 50px;
   font-size: 25px;
 }
 
 .comment-icon {
   width: 2%;
   height: 30px;
-  margin: 0 0 0 7px;
+  margin-left: 7px;
 }

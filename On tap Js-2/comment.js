@@ -16,7 +16,7 @@ function pushCommentToArr() {
   btnAdd.addEventListener('click', function() {
     getLocalStorageComments();
     var commentValue = document.getElementById('js-comment-value').value;
-    if (commentValue === '') {
+    if (!commentValue) {
       alert('Please add a comment...!!!')
     } else {
       var objCmt = {
