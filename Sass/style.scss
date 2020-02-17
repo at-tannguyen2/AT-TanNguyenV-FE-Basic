@@ -1,0 +1,449 @@
+@font-face {
+  font-family: 'UTM-Avo';
+  src: url('fonts/UTM\ Avo.ttf') format('ttf');
+  src: url('fonts/UTM\ Avo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'UTM-AvoBold';
+  src: url('fonts/UTM\ AvoBold.ttf') format('ttf');
+  src: url('fonts/UTM\ AvoBold.ttf') format('truetype');
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$fontface-avo: UTM-Avo;
+$fontface-avoBold: UTM-AvoBold;
+$fontface-primary: Arial, Helvetica, sans-serif;
+$text-primary: #5dc5fc;
+$text-secondary: #8e8e8e;
+$text-black: #0d1d25;
+$text-white: #FFFFFF;
+$size-default: 12px;
+$flex : flex;
+$flex-wrap: wrap;
+$border: 1px solid #e9e9e9;
+$bg-secondary: #d9e4e9;
+$bg-primary: #62c6f8;
+$bg-btn: #4bbc56;
+$pos-relative: relative;
+$pos-absolute: absolute;
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.row {
+  width: 100%;
+  display: $flex;
+  flex-wrap: $flex-wrap;
+}
+
+.col {
+  width: calc(100% / 3);
+}
+
+.text-secondary {
+  color: $text-secondary;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+.text-black {
+  color: $text-black;
+}
+
+.text-white {
+  color: $text-white;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.list-style-none {
+  list-style: none;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.border {
+  border: $border;
+}
+
+.border-bottom {
+  border-bottom: $border;
+}
+
+.d-flex {
+  display: $flex;
+}
+
+.flex-wrap {
+  flex-wrap: $flex-wrap;
+}
+
+@mixin width-height($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+.img-fluid {
+  @include width-height(100%, 100%);
+}
+
+.logo {
+  width: 65%;
+}
+
+.contact {
+  width: 35%;
+  font-family: $fontface-primary;
+}
+
+.header-top-wapper {
+  height: 95px;
+}
+
+@mixin company($font, $size) {
+  font-family: $font;
+  font-size: $size;
+}
+
+.company-name-top {
+  @include company($fontface-avoBold, 20px);
+}
+
+.company-name-bot {
+  @include company($fontface-avo, 16px);
+}
+
+@mixin before ($content) {
+  content: $content;
+}
+
+.contact-text::before {
+  @include before(url(image/phone.png));
+  margin-right: 9px;
+  vertical-align: middle;
+}
+
+.facebook::before {
+  @include before(url(image/fb-km.png));
+}
+
+.google::before {
+  @include before(url(image/fb-km.png));
+}
+
+.youtube::before {
+  @include before(url(image/youtube-km.png));
+}
+
+.contact-text {
+  font-size: 14px;
+}
+
+.contact-phone {
+  font-size: 18px;
+  margin-left: 9px;
+}
+
+.logo-img {
+  margin-right: 18px;
+}
+
+.page-nav {
+  @include width-height(65%, 100%);
+}
+
+.icon-social {
+  width: 35%;
+}
+
+.nav-link {
+  font-size: $size-default;
+  margin-left: 20px;
+  color: $text-secondary;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-item {
+  display: $flex;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+  border-left: $border;
+}
+
+.header-bottom-wrapper {
+  height: 60px;
+}
+
+.nav {
+  height: 100%;
+}
+
+.nav-item:first-child{
+  border: none;
+}
+
+.breadcrumb-item-space{
+  font-size: $size-default;
+  font-family: $fontface-avo;
+  color: $text-black;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@mixin afterbreadcrumb($content) {
+  content: $content;
+}
+
+.breadcrumb-item:first-child::after {
+  @include afterbreadcrumb('/');
+  margin: 12px;
+}
+
+.breadcrumb-item::after {
+  @include afterbreadcrumb('');
+}
+
+@mixin afteraccordion-formheader($content, $pos, $top) {
+  content: $content;
+  position: $pos;
+  top: $top;
+}
+
+.accordion-header::after , .accordion-footer::after {
+  @include afteraccordion-formheader('+', absolute, 30%);
+  left: 90%;
+}
+
+.form-header-text::after {
+  @include afteraccordion-formheader('', relative, 20px);
+  display: block;
+  width: 67px;
+  border-bottom: 2px solid #62c6f8;
+}
+
+.page-banner {
+  position: $pos-relative;
+}
+
+.breadcrumb {
+  position: $pos-absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.main-content {
+  margin-top: 75px;
+}
+
+.accordion-list-link {
+  font-family: $fontface-avo;
+  font-size: $size-default;
+  color: $text-black;
+  text-decoration: none;
+}
+
+.accordion-lists {
+  margin: 22px 0;
+  padding-left: 40px;
+}
+
+.accordion-list-item {
+  color: $text-black;
+  margin-top: 12px;
+}
+
+.page-sibebar {
+  width: 25%;
+}
+
+.accordion {
+  height: 397px;
+}
+
+@mixin accordion-cross($pos, $width, $height, $bgcolor) {
+  position: $pos;
+  width: $width;
+  height: $height;
+  background-color: $bgcolor;
+}
+
+.accordion-header, .accordion-footer {
+  @include accordion-cross($pos-relative, 100%, 50px, $bg-secondary);
+  padding-left: 19px;
+}
+
+.cross {
+  @include accordion-cross($pos-absolute, 15px, 15px, $bg-primary);
+  right: 0;
+  bottom: 0;
+  color: $text-white;
+}
+
+.accordion-header-title, .accordion-footer-title {
+  position: $pos-absolute;
+  margin: 0;
+  top: 50%;
+  padding-left: 20px;
+  transform: translate(0, -50%);
+  font-family: $fontface-avo;
+  font-size: $size-default;
+}
+
+.content-item {
+  height: 348px;
+  padding: 0 0 22px 20px;
+}
+
+.content {
+  width: 75%;
+}
+
+.content-item-border{
+  position: $pos-relative;
+  height: 100%;
+}
+
+@mixin content-item ($size, $padding) {
+  font-size: $size;
+  padding: $padding;
+}
+
+.content-item-body-text {
+  @include content-item(13px, 0 0 0 22px);
+}
+
+.content-item-body-title {
+  @include content-item(16px, 25px 0 17px 22px);
+}
+
+.page-form {
+  @include width-height(100%, 362px);
+  background-color: $bg-secondary;
+  margin-top: 42px;
+}
+
+.form-header {
+  padding: 27px 0 41px 22px;
+}
+
+.main-form {
+  padding-left: 20px;
+}
+
+.form-control {
+  @include width-height(255px, 38px);
+  margin-bottom: 15px;
+  padding-left: 12px;
+  outline: none;
+  border: none;
+}
+
+.form-control::placeholder {
+  color: $text-black;
+  font-size: 13px;
+}
+
+.form-send {
+  @include width-height(126px, 46px);
+  display: $flex;
+  margin-left: 65px;
+  background-color: $bg-btn;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin send-formheader($fontface, $size) {
+  font-family: $fontface;
+  font-size: $size;
+}
+
+.send {
+  @include send-formheader($fontface-avoBold, 14px);
+}
+
+.form-header-text {
+  @include send-formheader($fontface-avoBold, 18px)
+}
+
+.page-footer {
+  margin-top: 40px;
+  background-color: $bg-primary;
+}
+
+.abouts-link, .social-link, .support-link {
+  font-size: $size-default;
+  color: $text-white;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.social-item {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.social-connect-title , .support-title, .about-us-title {
+  font-family: $fontface-avoBold;
+  font-size: 18px;
+  color: $text-white;
+}
+
+.footer-top-wrapper {
+  padding: 40px 0;
+}
+
+.youtube::before, .google::before, .facebook::before {
+  position: $pos-relative;
+  top: 8px;
+  margin-right: 8px;
+}
+
+.about-us-text, .social-connect-text, .support-text {
+  padding-left: 18px;
+}
+
+.footer-top {
+  border-bottom: $border;
+}
+
+.footer-bottom {
+  height: 56px;
+}
+
+.copyright-text {
+  font-size: $size-default;
+}
+
+.abouts-item, .support-item {
+  color: $text-white;
+  margin: 21px 0;
+}
