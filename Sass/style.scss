@@ -1,3 +1,5 @@
+@import 'reset.scss';
+
 @font-face {
   font-family: 'UTM-Avo';
   src: url('fonts/UTM\ Avo.ttf') format('ttf');
@@ -8,12 +10,6 @@
   font-family: 'UTM-AvoBold';
   src: url('fonts/UTM\ AvoBold.ttf') format('ttf');
   src: url('fonts/UTM\ AvoBold.ttf') format('truetype');
-}
-
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
 }
 
 $fontface-avo: UTM-Avo;
@@ -32,6 +28,199 @@ $bg-primary: #62c6f8;
 $bg-btn: #4bbc56;
 $pos-relative: relative;
 $pos-absolute: absolute;
+
+@mixin width-height($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+.img-fluid {
+  @include width-height(100%, 100%);
+}
+
+.page-nav {
+  @include width-height(65%, 100%);
+}
+
+.page-form {
+  @include width-height(100%, 362px);
+  background-color: $bg-secondary;
+  margin-top: 42px;
+}
+
+.form-control {
+  @include width-height(255px, 38px);
+  margin-bottom: 15px;
+  padding-left: 12px;
+  outline: none;
+  border: none;
+}
+
+.form-send {
+  @include width-height(126px, 46px);
+  display: $flex;
+  margin-left: 65px;
+  background-color: $bg-btn;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin company($font, $size) {
+  font-family: $font;
+  font-size: $size;
+}
+
+.company-name-top {
+  @include company($fontface-avoBold, 20px);
+}
+
+.company-name-bot {
+  @include company($fontface-avo, 16px);
+}
+
+@mixin before ($content) {
+  content: $content;
+}
+
+.contact-text::before {
+  @include before(url(image/phone.png));
+  margin-right: 9px;
+  vertical-align: middle;
+}
+
+.facebook::before {
+  @include before(url(image/fb-km.png));
+}
+
+.google::before {
+  @include before(url(image/fb-km.png));
+}
+
+.youtube::before {
+  @include before(url(image/youtube-km.png));
+}
+
+@mixin afterbreadcrumb($content) {
+  content: $content;
+}
+
+.breadcrumb-item:first-child::after {
+  @include afterbreadcrumb('/');
+  margin: 12px;
+}
+
+.breadcrumb-item::after {
+  @include afterbreadcrumb('');
+}
+
+@mixin afteraccordion-formheader($content, $pos, $top) {
+  content: $content;
+  position: $pos;
+  top: $top;
+}
+
+.accordion-header::after {
+  @include afteraccordion-formheader('+', absolute, 30%);
+  left: 90%;
+}
+
+.accordion-footer::after {
+  @extend .accordion-header::after;
+}
+
+.form-header-text::after {
+  @include afteraccordion-formheader('', relative, 20px);
+  display: block;
+  width: 67px;
+  border-bottom: 2px solid #62c6f8;
+}
+
+@mixin accordion-cross($pos, $width, $height, $bgcolor) {
+  position: $pos;
+  width: $width;
+  height: $height;
+  background-color: $bgcolor;
+}
+
+.cross {
+  @include accordion-cross($pos-absolute, 15px, 15px, $bg-primary);
+  right: 0;
+  bottom: 0;
+  color: $text-white;
+}
+
+.accordion-header, .accordion-footer {
+  @include accordion-cross($pos-relative, 100%, 50px, $bg-secondary);
+  padding-left: 19px;
+  .accordion-header-title, .accordion-footer-title {
+    position: $pos-absolute;
+    margin: 0;
+    top: 50%;
+    padding-left: 20px;
+    transform: translate(0, -50%);
+    font-family: $fontface-avo;
+    font-size: $size-default;
+  }
+}
+
+@mixin content-item ($size, $padding) {
+  font-size: $size;
+  padding: $padding;
+}
+
+.content-item-body-text {
+  @include content-item(13px, 0 0 0 22px);
+}
+
+.content-item-body-title {
+  @include content-item(16px, 25px 0 17px 22px);
+}
+
+@mixin send-formheader($fontface, $size) {
+  font-family: $fontface;
+  font-size: $size;
+}
+
+.send {
+  @include send-formheader($fontface-avoBold, 14px);
+}
+
+.form-header-text {
+  @include send-formheader($fontface-avoBold, 18px)
+}
+
+.support-title {
+  @extend .social-connect-title;
+}
+
+.about-us-title {
+  @extend .social-connect-title;
+}
+
+.google::before {
+  @extend .youtube::before;
+}
+
+.facebook::before {
+  @extend .youtube::before;
+}
+
+.about-us-text {
+  padding-left: 18px;
+  list-style: inside;
+}
+
+.social-connect-text {
+  @extend .about-us-text;
+}
+
+.support-text {
+  @extend .about-us-text;
+}
+
+.footer-top-wrapper {
+  padding: 40px 0;
+}
 
 .container {
   width: 100%;
@@ -105,15 +294,6 @@ $pos-absolute: absolute;
   flex-wrap: $flex-wrap;
 }
 
-@mixin width-height($w, $h) {
-  width: $w;
-  height: $h;
-}
-
-.img-fluid {
-  @include width-height(100%, 100%);
-}
-
 .logo {
   width: 65%;
 }
@@ -125,41 +305,6 @@ $pos-absolute: absolute;
 
 .header-top-wapper {
   height: 95px;
-}
-
-@mixin company($font, $size) {
-  font-family: $font;
-  font-size: $size;
-}
-
-.company-name-top {
-  @include company($fontface-avoBold, 20px);
-}
-
-.company-name-bot {
-  @include company($fontface-avo, 16px);
-}
-
-@mixin before ($content) {
-  content: $content;
-}
-
-.contact-text::before {
-  @include before(url(image/phone.png));
-  margin-right: 9px;
-  vertical-align: middle;
-}
-
-.facebook::before {
-  @include before(url(image/fb-km.png));
-}
-
-.google::before {
-  @include before(url(image/fb-km.png));
-}
-
-.youtube::before {
-  @include before(url(image/youtube-km.png));
 }
 
 .contact-text {
@@ -175,36 +320,31 @@ $pos-absolute: absolute;
   margin-right: 18px;
 }
 
-.page-nav {
-  @include width-height(65%, 100%);
-}
-
 .icon-social {
   width: 35%;
-}
-
-.nav-link {
-  font-size: $size-default;
-  margin-left: 20px;
-  color: $text-secondary;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.nav-item {
-  display: $flex;
-  align-items: center;
-  margin: auto;
-  height: 100%;
-  border-left: $border;
 }
 
 .header-bottom-wrapper {
   height: 60px;
 }
 
-.nav {
+.nav-wrapper {
   height: 100%;
+  .nav-item {
+    display: $flex;
+    align-items: center;
+    margin: auto;
+    height: 100%;
+    border-left: $border;
+    .nav-link {
+      font-size: $size-default;
+      margin-left: 20px;
+      color: $text-secondary;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  
 }
 
 .nav-item:first-child{
@@ -217,37 +357,6 @@ $pos-absolute: absolute;
   color: $text-black;
   text-transform: uppercase;
   text-decoration: none;
-}
-
-@mixin afterbreadcrumb($content) {
-  content: $content;
-}
-
-.breadcrumb-item:first-child::after {
-  @include afterbreadcrumb('/');
-  margin: 12px;
-}
-
-.breadcrumb-item::after {
-  @include afterbreadcrumb('');
-}
-
-@mixin afteraccordion-formheader($content, $pos, $top) {
-  content: $content;
-  position: $pos;
-  top: $top;
-}
-
-.accordion-header::after , .accordion-footer::after {
-  @include afteraccordion-formheader('+', absolute, 30%);
-  left: 90%;
-}
-
-.form-header-text::after {
-  @include afteraccordion-formheader('', relative, 20px);
-  display: block;
-  width: 67px;
-  border-bottom: 2px solid #62c6f8;
 }
 
 .page-banner {
@@ -264,21 +373,20 @@ $pos-absolute: absolute;
   margin-top: 75px;
 }
 
-.accordion-list-link {
-  font-family: $fontface-avo;
-  font-size: $size-default;
-  color: $text-black;
-  text-decoration: none;
-}
-
 .accordion-lists {
   margin: 22px 0;
   padding-left: 40px;
-}
-
-.accordion-list-item {
-  color: $text-black;
-  margin-top: 12px;
+  .accordion-list-item {
+    color: $text-black;
+    margin-top: 12px;
+    list-style: inside;
+    .accordion-list-link {
+      font-family: $fontface-avo;
+      font-size: $size-default;
+      color: $text-black;
+      text-decoration: none;
+    }
+  }
 }
 
 .page-sibebar {
@@ -289,66 +397,17 @@ $pos-absolute: absolute;
   height: 397px;
 }
 
-@mixin accordion-cross($pos, $width, $height, $bgcolor) {
-  position: $pos;
-  width: $width;
-  height: $height;
-  background-color: $bgcolor;
-}
-
-.accordion-header, .accordion-footer {
-  @include accordion-cross($pos-relative, 100%, 50px, $bg-secondary);
-  padding-left: 19px;
-}
-
-.cross {
-  @include accordion-cross($pos-absolute, 15px, 15px, $bg-primary);
-  right: 0;
-  bottom: 0;
-  color: $text-white;
-}
-
-.accordion-header-title, .accordion-footer-title {
-  position: $pos-absolute;
-  margin: 0;
-  top: 50%;
-  padding-left: 20px;
-  transform: translate(0, -50%);
-  font-family: $fontface-avo;
-  font-size: $size-default;
-}
-
-.content-item {
-  height: 348px;
-  padding: 0 0 22px 20px;
-}
-
 .content {
   width: 75%;
+  .content-item {
+    height: 348px;
+    padding: 0 0 22px 20px;
+  }
 }
 
 .content-item-border{
   position: $pos-relative;
   height: 100%;
-}
-
-@mixin content-item ($size, $padding) {
-  font-size: $size;
-  padding: $padding;
-}
-
-.content-item-body-text {
-  @include content-item(13px, 0 0 0 22px);
-}
-
-.content-item-body-title {
-  @include content-item(16px, 25px 0 17px 22px);
-}
-
-.page-form {
-  @include width-height(100%, 362px);
-  background-color: $bg-secondary;
-  margin-top: 42px;
 }
 
 .form-header {
@@ -359,39 +418,9 @@ $pos-absolute: absolute;
   padding-left: 20px;
 }
 
-.form-control {
-  @include width-height(255px, 38px);
-  margin-bottom: 15px;
-  padding-left: 12px;
-  outline: none;
-  border: none;
-}
-
 .form-control::placeholder {
   color: $text-black;
   font-size: 13px;
-}
-
-.form-send {
-  @include width-height(126px, 46px);
-  display: $flex;
-  margin-left: 65px;
-  background-color: $bg-btn;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin send-formheader($fontface, $size) {
-  font-family: $fontface;
-  font-size: $size;
-}
-
-.send {
-  @include send-formheader($fontface-avoBold, 14px);
-}
-
-.form-header-text {
-  @include send-formheader($fontface-avoBold, 18px)
 }
 
 .page-footer {
@@ -399,36 +428,16 @@ $pos-absolute: absolute;
   background-color: $bg-primary;
 }
 
-.abouts-link, .social-link, .support-link {
-  font-size: $size-default;
-  color: $text-white;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.social-item {
-  list-style: none;
-  margin: 10px 0;
-}
-
-.social-connect-title , .support-title, .about-us-title {
+.social-connect-title {
   font-family: $fontface-avoBold;
   font-size: 18px;
   color: $text-white;
 }
 
-.footer-top-wrapper {
-  padding: 40px 0;
-}
-
-.youtube::before, .google::before, .facebook::before {
+.youtube::before {
   position: $pos-relative;
   top: 8px;
   margin-right: 8px;
-}
-
-.about-us-text, .social-connect-text, .support-text {
-  padding-left: 18px;
 }
 
 .footer-top {
@@ -443,7 +452,17 @@ $pos-absolute: absolute;
   font-size: $size-default;
 }
 
-.abouts-item, .support-item {
+.abouts-item, .support-item, .social-item{
   color: $text-white;
   margin: 21px 0;
+  .abouts-link, .support-link, .social-link{
+    font-size: $size-default;
+    color: $text-white;
+    text-transform: uppercase;
+  }
+}
+
+.social-item {
+  list-style: none;
+  margin: 10px 0;
 }
