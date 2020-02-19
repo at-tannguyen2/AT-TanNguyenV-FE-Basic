@@ -15,10 +15,9 @@
 $fontface-avo: UTM-Avo;
 $fontface-avoBold: UTM-AvoBold;
 $fontface-primary: Arial, Helvetica, sans-serif;
-$text-primary: #5dc5fc;
 $text-secondary: #8e8e8e;
-$text-black: #0d1d25;
-$text-white: #ffffff;
+$text-primary: #0d1d25;
+$text-light: #ffffff;
 $size-default: 12px;
 $flex: flex;
 $flex-wrap: wrap;
@@ -65,17 +64,27 @@ $pos-absolute: absolute;
   align-items: center;
 }
 
-@mixin company($font, $size) {
-  font-family: $font;
-  font-size: $size;
+@mixin fontface-size($font, $size) {
+  font: {
+    family: $font;
+    size: $size;
+  }
 }
 
 .company-name-top {
-  @include company($fontface-avoBold, 20px);
+  @include fontface-size($fontface-avoBold, 20px);
 }
 
 .company-name-bot {
-  @include company($fontface-avo, 16px);
+  @include fontface-size($fontface-avo, 16px);
+}
+
+.send {
+  @include fontface-size($fontface-avoBold, 14px);
+}
+
+.form-header-text {
+  @include fontface-size($fontface-avoBold, 18px);
 }
 
 @mixin before($content) {
@@ -166,7 +175,7 @@ $pos-absolute: absolute;
   @include accordion-cross($pos-absolute, 15px, 15px, $bg-primary);
   right: 0;
   bottom: 0;
-  color: $text-white;
+  color: $text-light;
 }
 
 .accordion-header {
@@ -178,8 +187,10 @@ $pos-absolute: absolute;
     top: 50%;
     padding-left: 20px;
     transform: translate(0, -50%);
-    font-family: $fontface-avo;
-    font-size: $size-default;
+    font: {
+      family: $fontface-avo;
+      size: $size-default;
+    }
   }
 }
 
@@ -196,19 +207,6 @@ $pos-absolute: absolute;
   @include content-item(16px, 25px 0 17px 22px);
 }
 
-@mixin send-formheader($fontface, $size) {
-  font-family: $fontface;
-  font-size: $size;
-}
-
-.send {
-  @include send-formheader($fontface-avoBold, 14px);
-}
-
-.form-header-text {
-  @include send-formheader($fontface-avoBold, 18px);
-}
-
 .google {
   &::before {
     @extend .youtube::before;
@@ -219,19 +217,6 @@ $pos-absolute: absolute;
   &::before {
     @extend .youtube::before;
   }
-}
-
-.about-us-text {
-  padding-left: 18px;
-  list-style: inside;
-}
-
-.social-connect-text {
-  @extend .about-us-text;
-}
-
-.support-text {
-  @extend .about-us-text;
 }
 
 .footer-top-wrapper {
@@ -262,12 +247,8 @@ $pos-absolute: absolute;
   color: $text-primary;
 }
 
-.text-black {
-  color: $text-black;
-}
-
-.text-white {
-  color: $text-white;
+.text-light {
+  color: $text-light;
 }
 
 .bold {
@@ -328,6 +309,7 @@ $pos-absolute: absolute;
 }
 
 .contact-phone {
+  color: #5dc5fc;
   font-size: 18px;
   margin-left: 9px;
 }
@@ -356,8 +338,10 @@ $pos-absolute: absolute;
       font-size: $size-default;
       margin-left: 20px;
       color: $text-secondary;
-      text-transform: uppercase;
-      text-decoration: none;
+      text: {
+        transform: uppercase;
+        decoration: none;
+      }
     }
   }
 }
@@ -367,11 +351,15 @@ $pos-absolute: absolute;
 }
 
 .breadcrumb-item-space {
-  font-size: $size-default;
-  font-family: $fontface-avo;
-  color: $text-black;
-  text-transform: uppercase;
-  text-decoration: none;
+  font: {
+    size: $size-default;
+    family: $fontface-avo;
+  }
+  color: $text-primary;
+  text: {
+    transform: uppercase;
+    decoration: none;
+  }
 }
 
 .page-banner {
@@ -392,13 +380,15 @@ $pos-absolute: absolute;
   margin: 22px 0;
   padding-left: 40px;
   .accordion-list-item {
-    color: $text-black;
+    color: $text-primary;
     margin-top: 12px;
     list-style: inside;
     .accordion-list-link {
-      font-family: $fontface-avo;
-      font-size: $size-default;
-      color: $text-black;
+      font: {
+        family: $fontface-avo;
+        size: $size-default;
+      }
+      color: $text-primary;
       text-decoration: none;
     }
   }
@@ -435,7 +425,7 @@ $pos-absolute: absolute;
 
 .form-control {
   &::placeholder {
-    color: $text-black;
+    color: $text-primary;
     font-size: 13px;
   }
 }
@@ -446,9 +436,11 @@ $pos-absolute: absolute;
 }
 
 .footer-title {
-  font-family: $fontface-avoBold;
-  font-size: 18px;
-  color: $text-white;
+  font: {
+    family: $fontface-avoBold;
+    size: 18px;
+  }
+  color: $text-light;
 }
 
 .youtube {
@@ -468,11 +460,12 @@ $pos-absolute: absolute;
 }
 
 .footer-list-item {
-  color: $text-white;
+  color: $text-light;
   margin: 21px 0;
+  list-style: inside;
   .footer-list-link {
     font-size: $size-default;
-    color: $text-white;
+    color: $text-light;
     text-transform: uppercase;
   }
 }
