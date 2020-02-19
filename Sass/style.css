@@ -36,12 +36,12 @@ a {
   text-decoration: none; }
 
 @font-face {
-  font-family: 'UTM-Avo';
+  font-family: "UTM-Avo";
   src: url("fonts/UTM Avo.ttf") format("ttf");
   src: url("fonts/UTM Avo.ttf") format("truetype"); }
 
 @font-face {
-  font-family: 'UTM-AvoBold';
+  font-family: "UTM-AvoBold";
   src: url("fonts/UTM AvoBold.ttf") format("ttf");
   src: url("fonts/UTM AvoBold.ttf") format("truetype"); }
 
@@ -126,15 +126,15 @@ a {
   background-color: #62c6f8;
   right: 0;
   bottom: 0;
-  color: #FFFFFF; }
+  color: #ffffff; }
 
-.accordion-header, .accordion-footer {
+.accordion-header {
   position: relative;
   width: 100%;
   height: 50px;
   background-color: #d9e4e9;
   padding-left: 19px; }
-  .accordion-header .accordion-header-title, .accordion-header .accordion-footer-title, .accordion-footer .accordion-header-title, .accordion-footer .accordion-footer-title {
+  .accordion-header .accordion-header-title {
     position: absolute;
     margin: 0;
     top: 50%;
@@ -189,7 +189,7 @@ a {
   color: #0d1d25; }
 
 .text-white {
-  color: #FFFFFF; }
+  color: #ffffff; }
 
 .bold {
   font-weight: bold; }
@@ -326,18 +326,15 @@ a {
   margin-top: 40px;
   background-color: #62c6f8; }
 
-.social-connect-title, .support-title, .about-us-title {
+.footer-title {
   font-family: UTM-AvoBold;
   font-size: 18px;
-  color: #FFFFFF; }
+  color: #ffffff; }
 
 .youtube::before, .google::before, .facebook::before {
   position: relative;
   top: 8px;
   margin-right: 8px; }
-
-.footer-top {
-  border-bottom: 1px solid #e9e9e9; }
 
 .footer-bottom {
   height: 56px; }
@@ -345,12 +342,12 @@ a {
 .copyright-text {
   font-size: 12px; }
 
-.abouts-item, .support-item, .social-item {
-  color: #FFFFFF;
+.footer-list-item {
+  color: #ffffff;
   margin: 21px 0; }
-  .abouts-item .abouts-link, .abouts-item .support-link, .abouts-item .social-link, .support-item .abouts-link, .support-item .support-link, .support-item .social-link, .social-item .abouts-link, .social-item .support-link, .social-item .social-link {
+  .footer-list-item .footer-list-link {
     font-size: 12px;
-    color: #FFFFFF;
+    color: #ffffff;
     text-transform: uppercase; }
 
 .social-item {
