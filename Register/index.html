@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-main">
+      <div class="container">
+        <form action="#" class="page-form">
+          <h2 class="page-title">Register</h2>
+          <ul class="progressbar">
+            <li class="bullet">1</li>
+            <li class="bullet">2</li>
+            <li class="bullet">3</li>
+            <li class="bullet">4</li>
+            <li class="bullet">5</li>
+          </ul>
+
+          <section class="section-register">
+            <p class="error-messenger"></p>
+            <h3 class="form-title">Create signUp Form</h3>
+            <div class="form-group">
+              <label class="form-control-title" for="#">First name (*)</label>
+              <input type="text" class="form-control" id="js-first-name" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-title" for="#">Last name (*)</label>
+              <input type="text" class="form-control" id="js-last-name" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-title" for="#">Email (*)</label>
+              <input type="text" class="form-control" id="js-email" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-title" for="#">Password (*)</label>
+              <input type="password" class="form-control" id="js-password" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-title" for="#"
+                >Confirm Password (*)</label
+              >
+              <input type="password" class="form-control" id="js-rePassword" />
+            </div>
+          </section>
+
+          <section class="section-phone display-none">
+            <h3 class="form-title">Your phone number</h3>
+            <input
+              type="text"
+              class="input-phone"
+              placeholder="XXXX"
+              maxlength="4"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            />
+            <input
+              type="text"
+              class="input-phone"
+              placeholder="XXX"
+              maxlength="3"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            />
+            <input
+              type="text"
+              class="input-phone"
+              placeholder="XXX"
+              maxlength="3"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+            />
+            <p class="attention">
+              Please your phone number that will recevie register code
+            </p>
+          </section>
+
+          <section class="section-code display-none">
+            <h3 class="form-title">SMS code</h3>
+            <input type="text" class="input-code"/>
+            <input type="text" class="input-code"/>
+            <input type="text" class="input-code"/>
+            <input type="text" class="input-code"/>
+            <p class="attention">
+              Please enter the verification code send to your phone number
+            </p>
+          </section>
+
+          <section class="section-information display-none"></section>
+
+          <section class="section-final display-none">
+            <p class="final-item">Thank you your registration!!!</p>
+            <img
+              class="final-item image-final"
+              src="https://thegioisachnoi.vn/wp-content/uploads/2019/04/icon-d%E1%BA%A5u-t%C3%ADch-xanh-400x400.png"
+              alt="#"
+            />
+            <p class="final-item">You account has been created.</p>
+            <p class="final-item">Sign in to this account for FE courses.</p>
+          </section>
+
+          <div class="main-button">
+            <button class="btn-next">Next</button>
+            <button class="btn-back">Back</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="handle.js"></script>
+  </body>
+</html>

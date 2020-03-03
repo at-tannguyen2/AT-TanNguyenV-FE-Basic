@@ -1,0 +1,298 @@
+html,
+body,
+div,
+span,
+object,
+p,
+a,
+address,
+img,
+strong,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 tr,
+th,
+td,
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.progressbar {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px 70px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 10px 0 rgba(51, 51, 51, 0.2);
+}
+
+.display-none {
+  display: none;
+}
+
+.bullet {
+  position: relative;
+  display: block;
+  margin: 0 30px;
+  padding-top: 2px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  color: #9893da;
+  font-size: 19px;
+  border-radius: 50%;
+  border: solid 2px #9893da;
+  line-height: 20px;
+  background-color: #ffffff;
+}
+
+.page-main {
+  height: 100vh;
+  background-color: #e8e8e8;
+}
+
+.completed {
+  color: #ffffff;
+  background-color: #9893da;
+}
+
+.completed::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: 70px;
+  background-color: #9893da;
+}
+
+.form-control {
+  width: 60%;
+  height: 30px;
+  box-sizing: border-box;
+  line-height: 30px;
+  font-size: 14px;
+  margin-left: 240px;
+  border: 0;
+  background: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  border-radius: 0;
+}
+
+.form-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+.page-title {
+  text-align: center;
+  color: #9893da;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.form-control-title {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 200px;
+  height: 30px;
+  color: #666;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.input-content {
+  position: absolute;
+  top: 0;
+  left: 175px;
+  height: 30px;
+  line-height: 30px;
+  color: #ccc;
+  cursor: text;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  z-index: 10;
+}
+
+.form-control:focus {
+  border-color: #9893da;
+  border-bottom: solid 2px #9893da;
+}
+
+.hidden-div {
+  transition: 0.4s;
+  margin-top: 50px;
+  opacity: 0;
+}
+
+.show-div {
+  display: block;
+  transition: 0.4s;
+  margin-bottom: 250px;
+  opacity: 1;
+}
+
+.main-button {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.btn-back,
+.btn-next {
+  width: 50%;
+  height: 35px;
+  margin: 5px 0;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+  font-weight: 300;
+  z-index: 3;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #809bce, #9893da);
+}
+
+.error-messenger {
+  text-align: center;
+  color: #fe8b8e;
+  height: 30px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.input-phone {
+  width: 150px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #9893da;
+  background-clip: padding-box;
+  line-height: 1.5;
+  border-radius: 6px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
+  margin: 20px 0;
+  text-align: center;
+}
+
+button:disabled,
+button[disabled] {
+  opacity: 0.5; 
+}
+
+.input-code {
+  width: calc(100% /5);
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #9893da;
+  background-clip: padding-box;
+  line-height: 1.5;
+  border-radius: 6px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
+  padding-left: 6px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.section-code {
+  margin-left: 10px;
+}
+
+.attention {
+  font-size: 14px;
+  color: #666;
+}
+
+.infor-item {
+  color: #666;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 15px 0;
+}
+
+.image-final {
+  width: 100px;
+  height: 100px;
+}
+
+.section-final {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.final-item {
+  color: #666;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 10px 0;
+}
+
+.form-title {
+  margin-top: 20px;
+}
+
+section.section-phone {
+  padding-left: 10px;
+}
