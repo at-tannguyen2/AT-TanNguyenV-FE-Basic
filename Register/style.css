@@ -163,35 +163,9 @@ a {
   line-height: 30px;
 }
 
-.input-content {
-  position: absolute;
-  top: 0;
-  left: 175px;
-  height: 30px;
-  line-height: 30px;
-  color: #ccc;
-  cursor: text;
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  z-index: 10;
-}
-
 .form-control:focus {
   border-color: #9893da;
   border-bottom: solid 2px #9893da;
-}
-
-.hidden-div {
-  transition: 0.4s;
-  margin-top: 50px;
-  opacity: 0;
-}
-
-.show-div {
-  display: block;
-  transition: 0.4s;
-  margin-bottom: 250px;
-  opacity: 1;
 }
 
 .main-button {
@@ -222,8 +196,13 @@ a {
   margin-top: 20px;
 }
 
-.input-phone {
-  width: 150px;
+button:disabled,
+button[disabled] {
+  opacity: 0.5;
+}
+
+.input-phone,
+.input-code {
   height: 30px;
   background-color: #fff;
   border: 1px solid #9893da;
@@ -236,24 +215,13 @@ a {
   text-align: center;
 }
 
-button:disabled,
-button[disabled] {
-  opacity: 0.5; 
+.input-phone {
+  width: 150px;
 }
 
 .input-code {
-  width: calc(100% /5);
-  height: 30px;
-  background-color: #fff;
-  border: 1px solid #9893da;
-  background-clip: padding-box;
-  line-height: 1.5;
-  border-radius: 6px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  outline: none;
+  width: calc(100% / 5);
   padding-left: 6px;
-  margin: 20px 0;
-  text-align: center;
 }
 
 .section-code {
@@ -293,6 +261,6 @@ button[disabled] {
   margin-top: 20px;
 }
 
-section.section-phone {
+.section-phone {
   padding-left: 10px;
 }
